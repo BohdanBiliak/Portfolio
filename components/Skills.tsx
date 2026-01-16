@@ -10,8 +10,8 @@ export default function Skills() {
 
   const categories: Array<{ id: SkillCategory | "all"; label: string }> = [
     { id: "all", label: t.skills?.all || "All" },
-    { id: "frontend", label: t.skills?.frontend || "Frontend" },
     { id: "backend", label: t.skills?.backend || "Backend" },
+    { id: "frontend", label: t.skills?.frontend || "Frontend" },
     { id: "devops", label: t.skills?.devops || "DevOps" },
     { id: "other", label: t.skills?.other || "Other" },
   ];
@@ -57,7 +57,7 @@ export default function Skills() {
         {/* Skills Display */}
         {activeCategory === "all" ? (
           <div className="space-y-10">
-            {(["frontend", "backend", "devops", "other"] as SkillCategory[]).map((category) => {
+            {(["backend", "frontend", "devops", "other"] as SkillCategory[]).map((category) => {
               const categorySkills = getSkillsByCategory(category);
               if (categorySkills.length === 0) return null;
 
